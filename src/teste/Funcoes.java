@@ -1,7 +1,6 @@
 package teste;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Funcoes {
 
@@ -41,7 +40,7 @@ public class Funcoes {
 
 		if (n > 1) {
 
-			Integer valorInicial = 1;
+			Integer valorInicial = 2;
 
 			Integer valorFinal = n;
 
@@ -56,8 +55,6 @@ public class Funcoes {
 			for (i = valorInicial; i <= valorFinal; i++) {
 
 				primo = true;
-				if (i == 1)
-					primo = false;
 
 				if (primo) {
 					if ((i % 2 == 0) && (i != 2)) {
@@ -65,7 +62,7 @@ public class Funcoes {
 					}
 				}
 				if (primo) {
-					for (j = 3; j <= (i / 2); j++) {
+					for (j = 3; j <= (Math.sqrt(i)); j++) {
 						if (i % j == 0) {
 							primo = false;
 							break;
@@ -84,8 +81,7 @@ public class Funcoes {
 	}
 
 	public static ArrayList<Integer> retornaPrimosMenoresRecursivo(Integer n) throws Exception {
-
-		if (n > 1) {
+		//if(n<1) {
 
 			boolean primo = true;
 
@@ -100,30 +96,22 @@ public class Funcoes {
 				}
 			}
 			if (primo) {
+				if (n <= (n / Math.sqrt(n))) {
+					primo = false;
 
-				Integer j = 3;
-
-				for (j = 3; j <= (n / 2); j++) {
-					if (n % j == 0) {
-						primo = false;
-						break;
-					}
 				}
 			}
-
 			if (primo)
 				list.add(n);
-			return retornaPrimosMenoresLinear(n - 1);
-		}
-		throw new Exception("Digite um número inteiro maior que 1");
+				System.out.print(list);
+					if(n>1) {
+						return retornaPrimosMenoresRecursivo(n - 1);
+					}throw new Exception();
+						
+		//}
+		//throw new Exception("Digite um número inteiro maior que 1");
 
 	}
 
-}	
-
-
-
-
-
-	
+}
 
