@@ -1,6 +1,7 @@
 package teste;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Funcoes {
 
@@ -80,17 +81,18 @@ public class Funcoes {
 		throw new Exception("Digite um número inteiro maior que 1");
 	}
 
-	public static Integer retornaPrimosRecursivo(Integer n) throws Exception {
+	public static List<Integer> retornaPrimosRecursivo(Integer n) throws Exception {
 		if (n > 1) {
+			List<Integer> primos = new ArrayList<>();
 
 			boolean primo = true;
-
 			if (primo) {
-				for (int i = 2; i < n; i++)
+				for (int i = 2; i < n; i++) {
 					if (n % i == 0) {
 						primo = false;
-
+						break;
 					}
+				}
 			}
 
 			if (primo) {
@@ -99,14 +101,17 @@ public class Funcoes {
 				}
 			}
 
-			if (primo)
-				System.out.println(n);
-			if (n > 2) {
-				retornaPrimosRecursivo(n - 1);
+			if (primo) {
+				primos.add(n);
 			}
-			return n;
 
+			if (n > 2) {
+				primos.addAll(retornaPrimosRecursivo(n - 1));
+			}
+
+			return primos;
 		}
+
 		throw new Exception("Digite um número inteiro maior que 1");
 	}
 
