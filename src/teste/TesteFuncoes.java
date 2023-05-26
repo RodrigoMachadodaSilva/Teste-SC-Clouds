@@ -4,13 +4,13 @@ public class TesteFuncoes {
 
 	public static void main(String[] args) throws Exception {
 
-		System.out.println(Funcoes.retornaFibocciEquivalenteRecursivo(9));
+		System.out.println(Funcoes.retornaFibocciEquivalenteRecursivo(7));
 		
-		System.out.println(Funcoes.retornaFibonacciEquivalenteLinear(9));
+		System.out.println(Funcoes.retornaFibonacciEquivalenteLinear(7));
 		
-		System.out.println(Funcoes.retornaPrimosMenoresLinear(8));
+		System.out.println(Funcoes.retornaPrimosLinear(14));
 		
-		Funcoes.retornaPrimosMenoresRecursivo(16);
+		Funcoes.retornaPrimosRecursivo(14);
 		
 		
 		

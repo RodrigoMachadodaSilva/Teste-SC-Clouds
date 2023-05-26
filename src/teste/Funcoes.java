@@ -36,7 +36,7 @@ public class Funcoes {
 
 	}
 
-	public static ArrayList<Integer> retornaPrimosMenoresLinear(Integer n) throws Exception {
+	public static ArrayList<Integer> retornaPrimosLinear(Integer n) throws Exception {
 
 		if (n > 1) {
 
@@ -79,21 +79,18 @@ public class Funcoes {
 		}
 		throw new Exception("Digite um número inteiro maior que 1");
 	}
-	
-	public static Integer retornaPrimosMenoresRecursivo(Integer n) throws Exception {
+
+	public static Integer retornaPrimosRecursivo(Integer n) throws Exception {
 		if (n > 1) {
 
 			boolean primo = true;
 
-			if (n == 1 )
-				primo = false;
-
 			if (primo) {
-			for(int i=2; i<n; i++ )	
-				if (n%i == 0) {
-					primo = false;
+				for (int i = 2; i < n; i++)
+					if (n % i == 0) {
+						primo = false;
 
-				}
+					}
 			}
 
 			if (primo) {
@@ -103,15 +100,14 @@ public class Funcoes {
 			}
 
 			if (primo)
-				System.out.print(n);
+				System.out.println(n);
 			if (n > 2) {
-				retornaPrimosMenoresRecursivo(n - 1);
+				retornaPrimosRecursivo(n - 1);
 			}
 			return n;
 
 		}
 		throw new Exception("Digite um número inteiro maior que 1");
 	}
-
 
 }
