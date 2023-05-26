@@ -80,18 +80,17 @@ public class Funcoes {
 		throw new Exception("Digite um número inteiro maior que 1");
 	}
 
-	public static ArrayList<Integer> retornaPrimosMenoresRecursivo(Integer n) throws Exception {
+	public static void retornaPrimosMenoresRecursivo( Integer n) throws Exception {
 		//if(n<1) {
-
-			boolean primo = true;
-
-			ArrayList<Integer> list = new ArrayList<>();
+		
+		Integer i = 2;
+		boolean primo = true;
 
 			if (n == 1)
 				primo = false;
 
 			if (primo) {
-				if ((n % 2 == 0) && (n != 2)) {
+				if ((n % i == 0) && (n != i)) {
 					primo = false;
 				}
 			}
@@ -102,16 +101,13 @@ public class Funcoes {
 				}
 			}
 			if (primo)
-				list.add(n);
-				System.out.print(list);
+				System.out.print(n);
 					if(n>1) {
-						return retornaPrimosMenoresRecursivo(n - 1);
-					}throw new Exception();
+						retornaPrimosMenoresRecursivo(n - 1);
+					}return ;
 						
-		//}
+		}
 		//throw new Exception("Digite um número inteiro maior que 1");
 
+
 	}
-
-}
-

@@ -10,7 +10,7 @@ public class TesteFuncoes {
 		
 		System.out.println(Funcoes.retornaPrimosMenoresLinear(8));
 		
-		System.out.print(Funcoes.retornaPrimosMenoresRecursivo(8));
+		Funcoes.retornaPrimosMenoresRecursivo(8);
 		
 		
 		
