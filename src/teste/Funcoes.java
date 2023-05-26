@@ -83,7 +83,6 @@ public class Funcoes {
 	public static Integer retornaPrimosMenoresRecursivo(Integer n) throws Exception {
 		if (n > 1) {
 
-			n = n - 1;
 			boolean primo = true;
 
 			if (n == 1)
@@ -105,7 +104,7 @@ public class Funcoes {
 			if (primo)
 				System.out.print(n);
 			if (n > 2) {
-				retornaPrimosMenoresRecursivo(n);
+				retornaPrimosMenoresRecursivo(n - 1);
 			}
 			return n;
 
