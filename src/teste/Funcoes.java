@@ -8,17 +8,18 @@ public class Funcoes {
 	public static Integer retornaFibonacciEquivalenteLinear(Integer n) throws Exception {
 
 		if (n >= 0) {
+
 			if (n < 2)
 				return n;
 
-			Integer i, F = 0, F1 = 1, F2 = 1;
+			Integer i, f = 0, f1 = 1, f2 = 1;
 			for (i = 3; i <= n; i++) {
-				F = F1 + F2;
-				F1 = F2;
-				F2 = F;
+				f = f1 + f2;
+				f1 = f2;
+				f2 = f;
 			}
 
-			return (F);
+			return (f);
 
 		}
 		throw new Exception("Digite um número positivo ou zero");
@@ -28,6 +29,7 @@ public class Funcoes {
 	public static Integer retornaFibocciEquivalenteRecursivo(Integer n) throws Exception {
 
 		if (n >= 0) {
+
 			if (n < 2) {
 				return n;
 			}
@@ -82,10 +84,13 @@ public class Funcoes {
 	}
 
 	public static List<Integer> retornaPrimosRecursivo(Integer n) throws Exception {
+
 		if (n > 1) {
+
 			List<Integer> primos = new ArrayList<>();
 
 			boolean primo = true;
+
 			if (primo) {
 				for (int i = 2; i < n; i++) {
 					if (n % i == 0) {
