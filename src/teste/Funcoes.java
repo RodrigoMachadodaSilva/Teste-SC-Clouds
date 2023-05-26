@@ -79,17 +79,18 @@ public class Funcoes {
 		}
 		throw new Exception("Digite um número inteiro maior que 1");
 	}
-
+	
 	public static Integer retornaPrimosMenoresRecursivo(Integer n) throws Exception {
 		if (n > 1) {
 
 			boolean primo = true;
 
-			if (n == 1)
+			if (n == 1 )
 				primo = false;
 
 			if (primo) {
-				if ((n / (n - 1) == 0)) {
+			for(int i=2; i<n; i++ )	
+				if (n%i == 0) {
 					primo = false;
 
 				}
@@ -111,5 +112,6 @@ public class Funcoes {
 		}
 		throw new Exception("Digite um número inteiro maior que 1");
 	}
+
 
 }
