@@ -80,34 +80,67 @@ public class Funcoes {
 		throw new Exception("Digite um número inteiro maior que 1");
 	}
 
-	public static void retornaPrimosMenoresRecursivo( Integer n) throws Exception {
-		//if(n<1) {
-		
-		Integer i = 2;
-		boolean primo = true;
+	public static Integer retornaPrimosMenoresRecursivo(Integer n) throws Exception {
+		 if(n>1) {
 
+			n = n -1;
+			boolean primo = true;
+	
 			if (n == 1)
 				primo = false;
-
+			
 			if (primo) {
-				if ((n % i == 0) && (n != i)) {
+				if ((n / (n - 1) == 0)) {
+					primo = false;
+	
+				}
+			}
+	
+			if (primo) {
+				if ((n % 2 == 0) && (n != 2)) {
 					primo = false;
 				}
 			}
-			if (primo) {
-				if (n <= (n / Math.sqrt(n))) {
-					primo = false;
-
-				}
-			}
+	
 			if (primo)
 				System.out.print(n);
-					if(n>1) {
-						retornaPrimosMenoresRecursivo(n - 1);
-					}return ;
-						
-		}
-		//throw new Exception("Digite um número inteiro maior que 1");
-
+			if (n > 2) {
+				retornaPrimosMenoresRecursivo(n);
+			}
+			return n;
 
 	}
+	 throw new Exception("Digite um número inteiro maior que 1");
+	}
+	public static boolean isPrime(int n, int i) {
+
+		// Base cases
+		if (n <= 2)
+			return (n == 2) ? true : false;
+		if (n % i == 0)
+			return false;
+		if (i * i > n)
+			return true;
+
+		// Check for next divisor
+		return isPrime(n, i + 1);
+	}
+
+	public static Integer testeDivisor(Integer a, Integer b) {
+		if (b == 1) {
+			return 0;
+		} else if (a % b == 0) {
+			return 1;
+		}
+		return testeDivisor(a, b - 1);
+
+	}
+
+	public static Integer testaPrimo(Integer n) {
+		if (testeDivisor(n, n - 1) == 0) {
+			return 1;
+		}
+		return 0;
+
+	}
+}

@@ -8,9 +8,9 @@ public class TesteFuncoes {
 		
 		System.out.println(Funcoes.retornaFibonacciEquivalenteLinear(9));
 		
-		System.out.println(Funcoes.retornaPrimosMenoresLinear(8));
+		System.out.println(Funcoes.retornaPrimosMenoresLinear(9));
 		
-		Funcoes.retornaPrimosMenoresRecursivo(8);
+		Funcoes.retornaPrimosMenoresRecursivo(15);
 		
 		
 		
